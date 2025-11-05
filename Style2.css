@@ -1,0 +1,72 @@
+/* ----- Estilo general del cuerpo ----- */
+body {
+  font-family: Arial, sans-serif;   /* Fuente limpia y legible */
+  margin: 0;                        /* Elimina los márgenes del navegador */
+  background-color: #12194b;        /* Fondo azul oscuro */
+}
+
+/* ----- Barra de navegación superior ----- */
+.menu {
+  background-color: #ffffff;        /* Fondo blanco */
+  text-align: right;                /* Enlaces alineados a la derecha */
+  padding: 20px 0;                  /* Espaciado vertical */
+}
+
+/* Quita viñetas y espacio a la lista del menú */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Muestra los elementos del menú uno al lado del otro */
+.menu li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+/* Estilos de los enlaces del menú */
+.menu a {
+  color: rgb(0, 0, 0);              /* Texto negro */
+  text-decoration: none;            /* Sin subrayado */
+  font-size: 18px;                  /* Tamaño de texto */
+  padding: 8px 15px;                /* Relleno interno */
+  transition: background 0.3s, color 0.3s;  /* Transición suave */
+}
+
+/* Efecto hover (al pasar el cursor) */
+.menu a:hover {
+  background-color: rgb(13, 10, 37); /* Azul más oscuro */
+  color: #ffffff;                    /* Texto blanco */
+  border-radius: 5px;                /* Bordes redondeados */
+}
+
+/* ----- Título principal de la sección ----- */
+.Titulo {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #ffffff;                   /* Texto blanco sobre fondo azul */
+}
+
+/* ----- Contenedor principal del contenido ----- */
+.Contenido {
+  display: flex;                    /* Activa flexbox */
+  flex-direction: row;              /* Distribuye en fila horizontal */
+  justify-content: space-between;   /* Espacio entre los elementos */
+  align-items: stretch;             /* Igual altura para ambos cuadros */
+  height: 400px;                    /* Altura total fija */
+}
+
+/* ----- Tarjetas de información ----- */
+.Info {
+  width: 100%;                      /* Ocupa todo el ancho disponible */
+  border-radius: 15px;              /* Bordes redondeados */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  flex-grow: 2;                     /* Permite expandirse */
+  padding: 15px;                    /* Relleno interno */
+  margin-left: 30px;
+  margin-right: 30px;
+  text-align: center;               /* Centra el texto */
+}

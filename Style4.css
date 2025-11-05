@@ -1,0 +1,117 @@
+/* ======== ESTILO GENERAL ======== */
+body {
+  font-family: Arial, sans-serif;  /* Fuente limpia y moderna */
+  margin: 0;                       /* Elimina los márgenes por defecto del navegador */
+  background-color: #12194b;       /* Fondo azul oscuro para contraste */
+}
+
+/* ======== MENÚ DE NAVEGACIÓN ======== */
+.menu {
+  background-color: #ffffff;       /* Fondo blanco para el menú superior */
+  text-align: right;               /* Alinea los enlaces a la derecha */
+  padding: 20px 0;                 /* Espaciado superior e inferior */
+}
+
+/* Elimina viñetas y márgenes del <ul> del menú */
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Coloca los elementos del menú en línea */
+.menu li {
+  display: inline-block;
+  margin: 0 15px;                 /* Espacio horizontal entre los enlaces */
+}
+
+/* Enlaces dentro del menú */
+.menu a {
+  color: rgb(0, 0, 0);            /* Texto negro */
+  text-decoration: none;          /* Quita el subrayado */
+  font-size: 18px;                /* Tamaño de letra */
+  padding: 8px 15px;              /* Espaciado interno */
+  transition: background 0.3s, color 0.3s; /* Transición suave en hover */
+}
+
+/* Efecto hover del menú */
+.menu a:hover {
+  background-color: rgb(13, 10, 37); /* Fondo azul oscuro */
+  color: #ffffff;                    /* Texto blanco */
+  border-radius: 5px;                /* Bordes redondeados */
+}
+
+/* ======== TÍTULO PRINCIPAL ======== */
+.Titulo {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+  color: #ffffff;                    /* Texto blanco sobre fondo oscuro */
+}
+
+/* ======== SECCIÓN DE JUEGOS ======== */
+.Juego {
+  display: flex;                     /* Activa flexbox */
+  flex-direction: row;               /* Coloca los elementos en fila */
+  justify-content: space-between;    /* Espaciado uniforme entre cajas */
+  align-items: stretch;              /* Igual altura para las cajas */
+  height: 410px;                     /* Altura fija del contenedor */
+}
+
+/* ======== CAJA DE CADA JUEGO ======== */
+.juego1 {
+  width: 100%;                       /* Ocupa todo el espacio disponible */
+  border-radius: 15px;               /* Bordes redondeados */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  flex-grow: 2;                      /* Permite expandirse si hay espacio */
+  padding: 15px;                     /* Espaciado interno */
+  margin: 40px;                      /* Espaciado externo */
+  text-align: center;                /* Centra el contenido */
+}
+
+/* ======== BOTONES ======== */
+.boton {
+  background-color: #4128a7;         /* Azul violeta intenso */
+  color: white;                      /* Texto blanco */
+  border: none;                      /* Sin borde */
+  padding: 12px 25px;                /* Espaciado interno */
+  border-radius: 10px;               /* Bordes redondeados */
+  font-size: 16px;                   /* Tamaño de texto */
+  cursor: pointer;                   /* Cambia el cursor al pasar */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2); /* Sombra para relieve */
+  transition: all 0.3s ease;         /* Transiciones suaves */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.boton:hover {
+  background-color: #232188;         /* Azul más oscuro */
+  transform: scale(1.05);            /* Efecto de aumento leve */
+}
+
+/* ======== CAMPO DE RESPUESTA (INPUT) ======== */
+.campo-respuesta {
+  width: 200px;                      /* Ancho del campo */
+  padding: 10px 15px;                /* Espaciado interno */
+  font-size: 16px;                   /* Tamaño de texto */
+  border: 2px solid #2835a7;         /* Borde azul */
+  border-radius: 12px;               /* Bordes redondeados */
+  outline: none;                     /* Elimina el borde azul estándar */
+  background-color: #f9fff9;         /* Fondo blanco suave */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+  transition: all 0.3s ease;         /* Transiciones suaves */
+  text-align: center;                /* Centra el texto dentro del campo */
+}
+
+/* Efecto hover del campo */
+.campo-respuesta:hover {
+  box-shadow: 0 4px 8px rgba(1, 36, 125, 0.745); /* Sombra azul al pasar el mouse */
+}
+
+/* Efecto al enfocar el campo (clic dentro) */
+.campo-respuesta:focus {
+  background-color: #e9ebff;          /* Fondo ligeramente azul */
+  border-color: #1e1e7e;              /* Borde más oscuro */
+  box-shadow: 0 0 10px rgba(12, 38, 169, 0.6); /* Brillo azul alrededor */
+  transform: scale(1.03);             /* Leve aumento visual */
+}

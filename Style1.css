@@ -1,0 +1,97 @@
+/* ----- Estilos generales del cuerpo de la página ----- */
+body {
+  font-family: Arial, sans-serif;   /* Define la fuente principal del texto */
+  margin: 0;                        /* Elimina los márgenes por defecto del navegador */
+  background-color: #12194b;        /* Asigna un color de fondo azul oscuro */
+}
+
+/* ----- Estilo del menú de navegación ----- */
+.menu {
+  background-color: #ffffff;        /* Fondo blanco para la barra del menú */
+  text-align: right;                /* Alinea los elementos del menú hacia la derecha */
+  padding: 20px 0;                  /* Espaciado vertical (arriba y abajo) del menú */
+}
+
+/* ----- Lista dentro del menú ----- */
+.menu ul {
+  list-style: none;                 /* Elimina los puntos o números de la lista */
+  margin: 0;                        /* Quita el margen por defecto */
+  padding: 0;                       /* Quita el relleno interno por defecto */
+}
+
+/* ----- Elementos individuales del menú (li) ----- */
+.menu li {
+  display: inline-block;            /* Coloca los elementos en línea (uno al lado del otro) */
+  margin: 0 15px;                   /* Espacio horizontal entre los enlaces del menú */
+}
+
+/* ----- Enlaces dentro del menú ----- */
+.menu a {
+  color: rgb(0, 0, 0);              /* Texto negro */
+  text-decoration: none;            /* Quita el subrayado del enlace */
+  font-size: 18px;                  /* Tamaño del texto */
+  padding: 8px 15px;                /* Espaciado interno para aumentar el área clicable */
+  transition: background 0.3s, color 0.3s;  /* Transición suave al pasar el mouse */
+}
+
+/* ----- Efecto al pasar el mouse por encima del enlace ----- */
+.menu a:hover {
+  background-color: rgb(32, 24, 97);  /* Cambia el fondo a un azul más oscuro */
+  color: #ffffff;                     /* Cambia el color del texto a blanco */
+  border-radius: 5px;                 /* Redondea las esquinas del fondo */
+}
+
+/* ----- Estilo del contenedor del título principal ----- */
+.Titulo {
+  margin-left: 80px;                 /* Espacio a la izquierda */
+  margin-right: 80px;                /* Espacio a la derecha */
+  margin-top: 40px;                  /* Espacio arriba */
+  margin-bottom: 30px;               /* Espacio abajo */
+  color: #ffffff;                    /* Texto blanco */
+}
+
+/* ----- Contenedor principal de la descripción ----- */
+.Descripción {
+  display: flex;                     /* Usa el modelo flexbox para distribuir elementos */
+  flex-direction: row;               /* Coloca los elementos hijos en una fila horizontal */
+  justify-content: space-between;    /* Separa los elementos dejando espacio entre ellos */
+  align-items: stretch;              /* Ajusta la altura de los elementos para que coincidan */
+  height: 400px;                     /* Altura total del bloque */
+}
+
+/* ----- Estilo general de los elementos informativos ----- */
+.info {
+  width: 50%;                        /* Ocupa la mitad del ancho del contenedor */
+  border-radius: 15px;               /* Bordes redondeados */
+  background-color: rgb(255, 255, 255); /* Fondo blanco */
+  flex-grow: 2;                      /* Permite que crezca si hay espacio disponible */
+  margin-left: 30px;                 /* Margen a la izquierda */
+  margin-right: 30px;                /* Margen a la derecha */
+  padding: 10px;                     /* Relleno interno */
+  text-align: center;                /* Centra el texto dentro del contenedor */
+}
+
+/* ----- Imagen dentro del bloque informativo ----- */
+.info img {
+  width: 100%;                       /* Hace que la imagen ocupe todo el ancho del contenedor */
+}
+
+/* ----- Estilo general para los botones personalizados ----- */
+.boton {
+  background-color: #4128a7;         /* Color de fondo morado oscuro */
+  color: white;                      /* Texto blanco */
+  border: none;                      /* Quita el borde por defecto */
+  padding: 12px 25px;                /* Espaciado interno del botón */
+  border-radius: 10px;               /* Bordes redondeados */
+  font-size: 16px;                   /* Tamaño del texto */
+  cursor: pointer;                   /* Cambia el cursor a una mano al pasar por encima */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);  /* Agrega una ligera sombra debajo */
+  transition: all 0.3s ease;         /* Transición suave para cambios visuales */
+  float: right;
+}
+
+/* ----- Efecto al pasar el cursor sobre el botón ----- */
+.boton:hover {
+  background-color: #232188;         /* Cambia el color del fondo a un tono más oscuro */
+  transform: scale(1.05);            /* Aumenta ligeramente el tamaño para dar efecto de clic */
+}

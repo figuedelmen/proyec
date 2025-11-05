@@ -1,0 +1,89 @@
+<!DOCTYPE html> <!-- Indica que el documento es HTML5 -->
+<html lang="es"> <!-- Establece que el idioma de la página es español -->
+<head>
+    <meta charset="UTF-8"> <!-- Define el tipo de codificación de caracteres (UTF-8 soporta acentos y caracteres especiales) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace que el sitio sea adaptable a pantallas pequeñas (como celulares) -->
+    <title>Proyecto</title> <!-- Título que aparecerá en la pestaña del navegador -->
+    <link rel="stylesheet" href="Style1.css"> <!-- Enlaza el archivo externo de estilos CSS -->
+</head>
+
+<body> <!-- Cuerpo principal del documento HTML -->
+    
+    <div class="principal"> <!-- Contenedor principal que agrupa todo el contenido -->
+
+       <!-- Menú de navegación -->
+       <nav class="menu"> <!-- Etiqueta de navegación -->
+        <ul> <!-- Lista desordenada que contiene los enlaces -->
+            <li><a href="Ley_hooke.html">Ley de Hooke</a></li> <!-- Enlace a la página "Ley de Hooke" -->
+            <li><a href="Problemas_hooke.html">Problemas de Hooke</a></li> <!-- Enlace a problemas -->
+            <li><a href="Historia_hooke.html">Historia de Hooke</a></li> <!-- Enlace a la historia -->
+            <li><a href="Juegos.html">Juego</a></li> <!-- Enlace al juego -->
+        </ul>
+       </nav>
+
+       <!-- Sección del título principal -->
+       <div class="Titulo">
+            <button id="traducir" class="boton">Convertir a inglés</button> <!-- Botón para cambiar el idioma -->
+            <h1 id="titulo">Ley de Hooke</h1> <!-- Título principal -->
+            <h2 id="subtitulo">Relación entre la fuerza y la deformación en los cuerpos elásticos</h2> <!-- Subtítulo -->
+       </div>
+
+       <!-- Sección descriptiva con imagen y texto -->
+       <div class="Descripción">
+            <!-- Imagen de Robert Hooke -->
+            <img class="info" src="img/Imagen de WhatsApp 2025-11-04 a las 21.15.35_7b7cb1d9.jpg" alt="Robert Hooke"> <!-- Imagen con clase 'info' y texto alternativo -->
+            
+            <!-- Texto descriptivo -->
+            <div class="info">
+                <h2 id="descripcionTitulo">Descripción de Hooke</h2> <!-- Subtítulo de la descripción -->
+                <p id="descripcionTexto">
+                    <!-- Párrafo explicativo de la Ley de Hooke -->
+                    La Ley de Hooke es un principio fundamental de la física que explica cómo los materiales elásticos se deforman cuando se les aplica una fuerza. 
+                    Fue propuesta por el físico inglés Robert Hooke en el año 1660, y establece que la deformación de un cuerpo elástico es directamente proporcional a la fuerza aplicada, 
+                    siempre que el material no sobrepase su límite elástico.
+                </p>
+            </div>
+       </div> <!-- Fin de la sección de descripción -->
+    </div> <!-- Fin del contenedor principal -->
+
+    <!-- Sección de script JavaScript -->
+    <script>
+        const boton = document.getElementById("traducir"); 
+        // Se obtiene el botón por su ID para poder usarlo en el script
+
+        boton.addEventListener("click", () => {
+            // Se agrega un "escuchador de eventos" que detecta cuando el usuario hace clic en el botón
+
+            const idioma = document.documentElement.lang;
+            // Se obtiene el idioma actual de la página (atributo "lang" del elemento <html>)
+
+            if (idioma === "es") {
+                // Si el idioma actual es español, cambia todo el contenido al inglés
+
+                document.documentElement.lang = "en"; // Cambia el idioma del documento a inglés
+                boton.textContent = "Convert to Spanish"; // Cambia el texto del botón
+
+                // Traducción del contenido al inglés
+                document.getElementById("titulo").textContent = "Hooke's Law"; 
+                document.getElementById("subtitulo").textContent = "Relationship between force and deformation in elastic bodies";
+                document.getElementById("descripcionTitulo").textContent = "Description of Hooke";
+                document.getElementById("descripcionTexto").textContent = 
+                    "Hooke's Law is a fundamental principle of physics that explains how elastic materials deform when a force is applied to them. It was proposed by the English physicist Robert Hooke in 1660 and states that the deformation of an elastic body is directly proportional to the applied force, as long as the material does not exceed its elastic limit.";
+            } else {
+                // Si el idioma actual NO es español (es inglés), vuelve a cambiar al español
+
+                document.documentElement.lang = "es"; // Cambia el idioma del documento a español
+                boton.textContent = "Convertir a inglés"; // Cambia el texto del botón nuevamente
+
+                // Traducción del contenido al español
+                document.getElementById("titulo").textContent = "Ley de Hooke";
+                document.getElementById("subtitulo").textContent = "Relación entre la fuerza y la deformación en los cuerpos elásticos";
+                document.getElementById("descripcionTitulo").textContent = "Descripción de Hooke";
+                document.getElementById("descripcionTexto").textContent = 
+                    "La Ley de Hooke es un principio fundamental de la física que explica cómo los materiales elásticos se deforman cuando se les aplica una fuerza. Fue propuesta por el físico inglés Robert Hooke en el año 1660, y establece que la deformación de un cuerpo elástico es directamente proporcional a la fuerza aplicada, siempre que el material no sobrepase su límite elástico.";
+            }
+        });
+    </script> <!-- Fin del script -->
+
+</body>
+</html> <!-- Fin del documento HTML -->

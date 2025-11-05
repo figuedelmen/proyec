@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="Style4.css">
+</head>
+<body>
+    <div class="principal">
+       <nav class="menu">
+        <ul>
+            <li><a href="Ley_hooke.html">Ley de Hooke</a></li>
+            <li><a href="Problemas_hooke.html">Problemas de Hooke</a></li>
+            <li><a href="Historia_hooke.html">Historia de Hooke</a></li>
+            <li><a href="Juegos.html">Juego</a></li>
+        </ul>
+       </nav>
+
+       <div class="Titulo">
+            <h1>Juegos</h1>
+       </div>
+
+       <div class="Juego">
+
+          <div class="juego1">
+            <h2>Piedra, Papel o Tijera</h2>
+            <button class="boton" onclick="jugar('piedra')">🪨 Piedra</button>
+            <button class="boton" onclick="jugar('papel')">📄 Papel</button>
+            <button class="boton" onclick="jugar('tijera')">✂ Tijera</button>
+            <p id="resultado"></p>
+          </div>
+
+          <div class="juego1">
+                <h2>🧮 Juego de Sumas y Restas</h2>
+                <p id="pregunta">Haz clic en "Comenzar" para empezar.</p>
+                <input type="number" id="respuesta" placeholder="Tu respuesta" class="campo-respuesta">
+                <br><br>
+                <button class="boton" onclick="verificar()">Responder</button>
+                <button class="boton" onclick="comenzar()">Comenzar</button>
+                <p id="resultadoo"></p>
+          </div>
+
+          <div class="juego1">
+            <h2>Caza el círculo 🟠</h2>
+            <div id="juego" style="width:400px;height:200px;border:2px solid black;position:relative;"></div>
+            <p id="puntos">Puntos: 0</p>
+          </div>
+       </div>
+    </div>
+
+    <script>
+        function jugar(eleccion) {
+            const opciones = ['piedra', 'papel', 'tijera'];
+            const pc = opciones[Math.floor(Math.random() * 3)];
+            let resultado = '';
+
+            if (eleccion === pc) resultado = '🤝 Empate';
+            else if (
+                (eleccion === 'piedra' && pc === 'tijera') ||
+                (eleccion === 'papel' && pc === 'piedra') ||
+                (eleccion === 'tijera' && pc === 'papel')
+            ) resultado = '🎉 Ganaste';
+            else resultado = '😢 Perdiste';
+
+            document.getElementById("resultado").textContent =
+                `Tú: ${eleccion} | PC: ${pc} → ${resultado}`;
+        }
+
+        let puntos = 0;
+        const area = document.getElementById("juego");
+
+        function crearCirculo() {
+            const circle = document.createElement("div");
+            const size = 40;
+            circle.style.width = size + "px";
+            circle.style.height = size + "px";
+            circle.style.borderRadius = "50%";
+            circle.style.background = "orange";
+            circle.style.position = "absolute";
+            circle.style.left = Math.random() * (400 - size) + "px";
+            circle.style.top = Math.random() * (200 - size) + "px";
+
+            circle.onclick = () => {
+                puntos++;
+                document.getElementById("puntos").textContent = "Puntos: " + puntos;
+                circle.remove();
+                crearCirculo();
+            };
+
+            area.innerHTML = "";
+            area.appendChild(circle);
+        }
+
+        crearCirculo();
+
+        let num1, num2, operacion, puntoss = 0, preguntaActual = 0;
+
+        function comenzar() {
+            puntoss = 0;
+            preguntaActual = 0;
+            document.getElementById("resultadoo").textContent = "";
+            nuevaPregunta();
+        }
+
+        function nuevaPregunta() {
+            if (preguntaActual < 5) {
+                num1 = Math.floor(Math.random() * 10) + 1;
+                num2 = Math.floor(Math.random() * 10) + 1;
+                operacion = Math.floor(Math.random() * 2);
+                let simbolo = operacion === 0 ? "+" : "-";
+                document.getElementById("pregunta").textContent =
+                    `Pregunta ${preguntaActual + 1}: ${num1} ${simbolo} ${num2} = ?`;
+                document.getElementById("respuesta").value = "";
+                preguntaActual++;
+            } else {
+                document.getElementById("pregunta").textContent = "Juego terminado 🎉";
+                document.getElementById("resultadoo").textContent =
+                    `Tu puntuación final es: ${puntoss} de 5.`;
+            }
+        }
+
+        function verificar() {
+            if (preguntaActual <= 5) {
+                let res = parseInt(document.getElementById("respuesta").value);
+                let correcta = operacion === 0 ? num1 + num2 : num1 - num2;
+
+                if (res === correcta) {
+                    puntoss++;
+                    document.getElementById("resultadoo").textContent = "✅ ¡Correcto!";
+                } else {
+                    document.getElementById("resultadoo").textContent =
+                        `❌ Incorrecto. La respuesta correcta era ${correcta}.`;
+                }
+
+                setTimeout(nuevaPregunta, 1000);
+            }
+        }
+    </script>
+</body>
+</html>
